@@ -1,24 +1,16 @@
 package com.freeze.freeze;
 
 public class SoundEvent {
-    private String type; // "speech" 또는 "noise"
-    private String content; // 음성 내용 또는 소리 종류 (예: "문 열어줘" or "개 짖는 소리")
-    private String direction; // 방향 정보 (예: "left", "right", "front") — speech면 null
+    private String text;
+    private String direction;
+    private String soundClass;
 
-    public String getType() {
-        return type;
+    public String getText() {
+        return text;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getDirection() {
@@ -29,8 +21,16 @@ public class SoundEvent {
         this.direction = direction;
     }
 
+    public String getSoundClass() {
+        return soundClass;
+    }
+
+    public void setSoundClass(String soundClass) {
+        this.soundClass = soundClass;
+    }
+
     @Override
     public String toString() {
-        return "[type=" + type + ", content=" + content + ", direction=" + direction + "]";
+        return "[text=" + text + ", direction=" + direction + ", soundClass=" + soundClass + "]";
     }
 }

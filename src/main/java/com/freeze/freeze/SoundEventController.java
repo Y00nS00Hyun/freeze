@@ -15,11 +15,11 @@ public class SoundEventController {
 
     @PostMapping
     public ResponseEntity<String> receiveSound(@RequestBody SoundEvent soundEvent) {
-        System.out.println("소리 이벤트 수신됨: " + soundEvent);
+        System.out.println("💬 FastAPI로부터 수신된 사운드 이벤트: " + soundEvent);
 
-        // WebSocket 브로드캐스트
+        // 앱에 실시간 전송
         webSocketHandler.broadcast(soundEvent);
 
-        return ResponseEntity.ok("데이터 받음");
+        return ResponseEntity.ok("OK");
     }
 }
